@@ -1,12 +1,22 @@
 @extends('frontend.master')
 @section('slide')
+    <div class="breacrumb-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-text product-more">
+                        <a href="{{ route('show.home') }}"><i class="fa fa-home"></i> Trang chủ</a>
+                        <span>Giỏ hàng</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container mt-3 mb-3">
         <div class="d-flex justify-content-center row">
             <div class="col-md-12">
                 <div class="p-2">
-                    <h4>Shopping cart</h4>
-                    <div class="d-flex flex-row align-items-center pull-right"><span class="mr-1">Sort
-                            by:</span><span class="mr-1 font-weight-bold">Price</span><i class="fa fa-angle-down"></i></div>
+                    <h4>Giỏ hàng</h4>
                 </div>
                 <div class="d-flex flex-row justify-content-between align-items-center p-2 bg-white mt-4 px-3 rounded">
                     <div class="mr-1">Ảnh sản phẩm

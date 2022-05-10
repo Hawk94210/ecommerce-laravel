@@ -30,6 +30,8 @@ Route::get('/', [HomeController::class, 'index'])->name('show.home');
 Route::get('listProduct/{id}', [ControllersCategoryController::class, 'getListProduct'])->name('show.list.products.by.categoy');
 Route::get('detail/{id}', [ControllersProductController::class, 'detail'])->name('show.detail');
 
+Route::get('product-list', [ControllersProductController::class, 'index'])->name('show.product');
+
 
 
 Route::get('register', [RegisterController::class, 'index'])->name('show.register');

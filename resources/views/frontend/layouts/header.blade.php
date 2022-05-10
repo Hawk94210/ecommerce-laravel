@@ -18,7 +18,7 @@
                                 class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="watches.html"> Sản phẩm </a>
+                        <a class="nav-link" href="{{ route('show.product') }}"> Sản phẩm </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="about.html"> Tin tức </a>
