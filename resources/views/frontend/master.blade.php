@@ -236,6 +236,7 @@
                     }
                 });
 
+
                 $.ajax({
                     type: "POST",
                     url: "{{ route('update.cart') }}",
