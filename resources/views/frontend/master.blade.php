@@ -183,8 +183,6 @@
                 var product_id = $(this).closest('.product_data').find('.prod_id').val();
                 var quantity = $(this).closest('.product_data').find('.qty-input').val();
 
-                alert(product_id)
-                // alert(quantity)
                 $.ajaxSetup({
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -222,6 +220,7 @@
                         'prod_id': prod_id,
                     },
                     success: function(response) {
+                        location.reload()
                         alert(response.status)
                     }
                 });
@@ -231,8 +230,6 @@
                 e.preventDefault();
                 var quantity = $('#qty');
                 var prod_id = $(this).closest('.product-data').find('.prod_id').val();
-                alert(prod_id)
-                alert(quantity)
                 $.ajaxSetup({
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -243,7 +240,7 @@
                     type: "POST",
                     url: "{{ route('update.cart') }}",
                     data: {
-                        'product_id': product_id,
+                        'product_id': prod_id,
                         'quantity': quantity,
                     },
                     success: function(response) {

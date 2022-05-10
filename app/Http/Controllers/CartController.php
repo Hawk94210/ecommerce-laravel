@@ -92,7 +92,6 @@ class CartController extends Controller
     {
         $product_id = $request->input('product_id');
         $quantity = $request->input('quantity');
-
         if (Auth::check()) {
             if (Cart::where('prod_id', $product_id)->where('user_id', Auth::id())->exists()) {
 
