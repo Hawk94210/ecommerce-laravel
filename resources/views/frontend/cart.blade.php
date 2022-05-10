@@ -15,8 +15,10 @@
     <div class="container mt-3 mb-3">
         <div class="d-flex justify-content-center row">
             <div class="col-md-12">
-                <div class="p-2">
-                    <h4>Giỏ hàng</h4>
+                <div class="heading_container heading_center">
+                    <h2>
+                        Giỏ hàng
+                    </h2>
                 </div>
                 <div class="d-flex flex-row justify-content-between align-items-center p-2 bg-white mt-4 px-3 rounded">
                     <div class="mr-1">Ảnh sản phẩm
