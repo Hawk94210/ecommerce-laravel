@@ -29,7 +29,7 @@ class CartController extends Controller
 
             if ($prod_check) {
                 if (Cart::where('prod_id', $product_id)->where('user_id', Auth::id())->exists()) {
-                    return response()->json(['status' => $prod_check->name . 'Already']);
+                    return response()->json(['status' => 'Thêm sản phẩm' . $prod_check->name . 'thành công']);
                 } else {
                     $cartItem = new Cart();
                     $cartItem->prod_id = $product_id;
@@ -40,7 +40,7 @@ class CartController extends Controller
                 }
             }
         } else {
-            return response()->json(['status' => "Login to Continue"]);
+            return response()->json(['status' => "Bạn cần đăng nhập"]);
         }
     }
 
