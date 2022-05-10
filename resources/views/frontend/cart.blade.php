@@ -42,11 +42,11 @@
                                         value="{{ $cart->prod_qty }}">
                                     <button class="input-group-text changeQty increment-btn">+</button>
                                 </div> --}}
-                                <div class="quantity">
-                                    <div class="pro-qty">
-                                        <input type="text" class="qty-input" id="qty" value="{{ $cart->prod_qty }}">
-                                    </div>
-                                </div>
+                                <div data-th="Quantity"><input type="number"
+                                        class="form-control form-control-lg text-center qty-input changeQty"
+                                        value="{{ $cart->prod_qty }}"></div>
+                                {{-- <input type="text" class="qty-input" id="qty" value="{{ $cart->prod_qty }}"> --}}
+
                             </div>
                             <div>
                                 <h5 class="text-grey">{{ number_format($cart->products->price, 0, ',', '.') }}đ</h5>

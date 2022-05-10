@@ -90,13 +90,13 @@ class CartController extends Controller
 
     public function update(Request $request)
     {
-        $product_id = $request->input('product_id');
-        $quantity = $request->input('quantity');
+        $prod_id = $request->input('prod_id');
+        $prod_qty = $request->input('prod_qty');
         if (Auth::check()) {
-            if (Cart::where('prod_id', $product_id)->where('user_id', Auth::id())->exists()) {
+            if (Cart::where('prod_id', $prod_id)->where('user_id', Auth::id())->exists()) {
 
-                $cartItem = Cart::where('prod_id', $product_id)->where('user_id', Auth::id())->first();
-                $cartItem->prod_id = $quantity;
+                $cartItem = Cart::where('prod_id', $prod_id)->where('user_id', Auth::id())->first();
+                $cartItem->prod_qty = $prod_qty;
                 $cartItem->update();
                 return response()->json(['status' => 'Thành công']);
             }

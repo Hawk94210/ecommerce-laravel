@@ -158,24 +158,24 @@
     <script>
         $(document).ready(function() {
 
-            var proQty = $('.pro-qty');
-            proQty.prepend('<span class="dec qtybtn changeQty">-</span>');
-            proQty.append('<span class="inc qtybtn changeQty">+</span>');
-            proQty.on('click', '.qtybtn', function() {
-                var $button = $(this);
-                var oldValue = $button.parent().find('input').val();
-                if ($button.hasClass('inc')) {
-                    var newVal = parseFloat(oldValue) + 1;
-                } else {
-                    // Don't allow decrementing below zero
-                    if (oldValue > 0) {
-                        var newVal = parseFloat(oldValue) - 1;
-                    } else {
-                        newVal = 0;
-                    }
-                }
-                $button.parent().find('input').val(newVal);
-            });
+            // var proQty = $('.pro-qty');
+            // proQty.prepend('<span class="dec qtybtn changeQty">-</span>');
+            // proQty.append('<span class="inc qtybtn changeQty">+</span>');
+            // proQty.on('click', '.qtybtn', function() {
+            //     var $button = $(this);
+            //     var oldValue = $button.parent().find('input').val();
+            //     if ($button.hasClass('inc')) {
+            //         var newVal = parseFloat(oldValue) + 1;
+            //     } else {
+            //         // Don't allow decrementing below zero
+            //         if (oldValue > 0) {
+            //             var newVal = parseFloat(oldValue) - 1;
+            //         } else {
+            //             newVal = 0;
+            //         }
+            //     }
+            //     $button.parent().find('input').val(newVal);
+            // });
 
             $('.addToCartBtn').click(function(e) {
                 e.preventDefault();
@@ -228,24 +228,24 @@
             });
             $('.changeQty').click(function(e) {
                 e.preventDefault();
-                var quantity = $('#qty');
+                var quantity = $(this).closest('.product-data').find('.qty-input').val();
                 var prod_id = $(this).closest('.product-data').find('.prod_id').val();
                 $.ajaxSetup({
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     }
                 });
-
+                data = {
+                    'prod_id': prod_id,
+                    'prod_qty': quantity,
+                }
 
                 $.ajax({
                     type: "POST",
                     url: "{{ route('update.cart') }}",
-                    data: {
-                        'product_id': prod_id,
-                        'quantity': quantity,
-                    },
+                    data: data,
                     success: function(response) {
-                        alert(response)
+                        location.reload()
                     }
                 });
             });
