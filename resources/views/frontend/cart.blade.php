@@ -77,11 +77,8 @@
                 <div class="cart-footer">
                     <h6>Total price: {{ number_format($total, 0, ',', '.') }}đ</h6>
                 </div>
-                <div class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded"><input type="text"
-                        class="form-control border-0 gift-card" placeholder="discount code/gift card"><button
-                        class="btn btn-outline-warning btn-sm ml-2" type="button">Apply</button></div>
                 <div class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded"><button
-                        class="btn btn-warning btn-block btn-lg ml-2 pay-button" type="button">Proceed to Pay</button></div>
+                        class="btn btn-warning btn-block btn-lg ml-2 pay-button" type="button">Checkout</button></div>
             </div>
         </div>
     </div>
