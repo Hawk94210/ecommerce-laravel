@@ -77,8 +77,9 @@
                 <div class="cart-footer">
                     <h6>Total price: {{ number_format($total, 0, ',', '.') }}đ</h6>
                 </div>
-                <div class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded"><button
-                        class="btn btn-warning btn-block btn-lg ml-2 pay-button" type="button">Checkout</button></div>
+                <div class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded"><a
+                        href="{{ route('get.checkout') }}" class="btn btn-warning btn-block btn-lg ml-2 pay-button"
+                        type="button">Checkout</a></div>
             </div>
         </div>
     </div>

@@ -17,7 +17,7 @@
     @yield('title')
     <base href="{{ asset('') }}">
 
-
+    {{-- toastr --}}
     <!-- bootstrap core css -->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
     <!--owl slider stylesheet -->
@@ -68,6 +68,7 @@
     <!-- footer section -->
     <!-- jQery -->
     <script src="js/jquery-3.4.1.min.js"></script>
+    {{-- toastr --}}
     <!-- popper js -->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
@@ -144,7 +145,6 @@
                     },
                     success: function(response) {
                         location.reload()
-                        alert(response.status)
                     }
                 });
 

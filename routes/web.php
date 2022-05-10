@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\TransactionController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductController as ControllersProductController;
 use App\Http\Controllers\CategoryController as ControllersCategoryController;
+use App\Http\Controllers\CheckoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,6 +48,10 @@ Route::post('remove-from-cart', [CartController::class, 'remove'])->name('remove
 
 Route::middleware(['auth'])->group(function () {
     Route::get('logout', [LogoutController::class, 'logout'])->name('logout');
+
+    Route::get('checkout', [CheckoutController::class, 'index'])->name('get.checkout');
+
+    Route::post('placeorder', [CheckoutController::class, 'placeOrder']);
 });
 
 Route::middleware(['auth', 'isAdmin'])->group(function () {
